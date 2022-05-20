@@ -103,7 +103,7 @@
 
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/d/0d2fe9447215b697@8568.js?v=3";
+import define from "https://api.observablehq.com/d/0d2fe9447215b697.js";
 new Runtime().module(define, name => {
   if (name === "mp") return new Inspector(document.querySelector("#observablehq-mp-18520363"));
   if (name === "vis") return new Inspector(document.querySelector("#observablehq-vis-18520363"));
