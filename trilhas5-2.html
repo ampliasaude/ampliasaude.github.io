@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Amplia Saúde: Trilhas Exploratórias</title>
+  </head>
+  <body>
+<div id="observablehq-cabecalho-943c087b"></div>
+<div id="observablehq-mp-943c087b"></div>
+<div id="observablehq-div_controles-943c087b"></div>
+<div id="observablehq-vis-943c087b"></div>
+<div id="observablehq-style-943c087b"></div>
+<div id="observablehq-style_slider-943c087b"></div>
+<div id="observablehq-style_menu-943c087b"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/9b8623df042a7822.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "cabecalho") return new Inspector(document.querySelector("#observablehq-cabecalho-943c087b"));
+  if (name === "mp") return new Inspector(document.querySelector("#observablehq-mp-943c087b"));
+  if (name === "div_controles") return new Inspector(document.querySelector("#observablehq-div_controles-943c087b"));
+  if (name === "vis") return new Inspector(document.querySelector("#observablehq-vis-943c087b"));
+  if (name === "style") return new Inspector(document.querySelector("#observablehq-style-943c087b"));
+  if (name === "style_slider") return new Inspector(document.querySelector("#observablehq-style_slider-943c087b"));
+  if (name === "style_menu") return new Inspector(document.querySelector("#observablehq-style_menu-943c087b"));
+  return ["menu_municipios","barra_municipios","gPESO","funcoesGeradoras","gPIG","gTOTAL","conf_trilhas","listenerFiltroGlobal","onfirstload","gPM25","gListaValores","copyTrilha","copy_button","gAdicionaTrilha","gLoadingTrilha","removeTrilha","remove_trilha_button","addTrilha","inner_slider","checkPoluente","checkFiltros","checkTempo","checkTamanho","checkEscala","checkMediaMovel","filterDate","getCurrentConf","copyLinkButton"].includes(name);
+});
+</script>
+  </body>
+</html>
