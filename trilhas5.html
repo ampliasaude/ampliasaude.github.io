@@ -27,25 +27,9 @@ new Runtime().module(define, name => {
           window.open("https://ampliasaude.github.io/trilhas5-2.html")
         }
       });
-      const {_node} = this;
-      if (!isnode(value) || (value.parentNode && value.parentNode !== _node)) {
-        value = inspect(value, false, _node.firstChild // TODO Do this better.
-            && _node.firstChild.classList
-            && _node.firstChild.classList.contains("observablehq--expanded"), name);
-        value.classList.add("observablehq--inspect");
-      }
-      _node.classList.remove("observablehq--running", "observablehq--error");
-      if (_node.firstChild !== value) {
-        if (_node.firstChild) {
-          while (_node.lastChild !== _node.firstChild) _node.removeChild(_node.lastChild);
-          _node.replaceChild(value, _node.firstChild);
-        } else {
-          _node.appendChild(value);
-        }
-      }
-      dispatch(_node, "update");
+      console.log(name);
+      return ret;
     }
-    return ret;
   }
   if (name === "div_controles") return new Inspector(document.querySelector("#observablehq-div_controles-6818169e"));
   if (name === "vis") return new Inspector(document.querySelector("#observablehq-vis-6818169e"));
