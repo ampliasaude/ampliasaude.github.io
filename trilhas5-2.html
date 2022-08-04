@@ -26,7 +26,7 @@ new Runtime().module(define, name => {
 });
   
   window.onload = () => {
-  mp.addEventListener("aba",ev=>{
+  document.getElementById("observablehq-mp-dbc7197a").firstChild.addEventListener("aba",ev=>{
   if(ev.detail.index == 1) {
     window.open("https://ampliasaude.github.io/trilhas5.html")
   } else if(ev.detail.index == 2) {
