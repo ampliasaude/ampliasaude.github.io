@@ -25,7 +25,8 @@ new Runtime().module(define, name => {
   return ["menu_municipios","barra_municipios","gPESO","funcoesGeradoras","gPIG","gTOTAL","conf_trilhas","listenerFiltroGlobal","onfirstload","gPM25","gListaValores","copyTrilha","copy_button","gAdicionaTrilha","gLoadingTrilha","removeTrilha","remove_trilha_button","addTrilha","inner_slider","checkPoluente","checkFiltros","checkTempo","checkTamanho","checkEscala","checkMediaMovel","filterDate","getCurrentConf","copyLinkButton"].includes(name);
 });
   
-document.getElementById("observablehq-mp-6818169e").firstChild.addEventListener("aba",ev=>{
+window.onload = () => {
+  document.getElementById("observablehq-mp-6818169e").firstChild.addEventListener("aba",ev=>{
   if(ev.detail.index == 1) {
     return
     //window.open("https://ampliasaude.github.io/trilhas5.html")
@@ -33,6 +34,7 @@ document.getElementById("observablehq-mp-6818169e").firstChild.addEventListener(
     window.open("https://ampliasaude.github.io/trilhas5-2.html")
   }
 });
+}
 </script>
   </body>
 </html>
