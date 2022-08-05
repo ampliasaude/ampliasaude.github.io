@@ -28,7 +28,7 @@ new Runtime().module(define, name => {
           window.open("https://ampliasaude.github.io/trilhas5-2.html")
         }
       });
-      return oldFunction(value,name);
+      return oldFunction.apply(this,arguments);
     }
     return ret;
   }
