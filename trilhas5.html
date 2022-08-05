@@ -19,18 +19,15 @@ new Runtime().module(define, name => {
   if (name === "mp") {
     let ret = new Inspector(document.querySelector("#observablehq-mp-6818169e"));
     ret.fulfilled = (value,name) => {
-      let oldFunction = ret.fulfilled;
-      return (value,name) => {
-        value.addEventListener("aba",ev=>{
-          if(ev.detail.index == 1) {
-            return
-            //window.open("https://ampliasaude.github.io/trilhas5.html")
-          } else if(ev.detail.index == 2) {
-            window.open("https://ampliasaude.github.io/trilhas5-2.html")
-          }
-        });
-        return oldFunction.apply(this,[value,name]);
-      }
+      value.addEventListener("aba",ev=>{
+        if(ev.detail.index == 1) {
+          return
+          //window.open("https://ampliasaude.github.io/trilhas5.html")
+        } else if(ev.detail.index == 2) {
+          window.open("https://ampliasaude.github.io/trilhas5-2.html")
+        }
+      });
+      document.getElementById("observablehq-mp-6818169e").appendChild(value);
     }
     return ret;
   }
