@@ -19,6 +19,7 @@ new Runtime().module(define, name => {
   if (name === "mp") {
     let ret = new Inspector(document.querySelector("#observablehq-mp-6818169e"));
     ret.fulfilled = (value,name) => {
+      let oldFunction = ret.fulfilled;
       value.addEventListener("aba",ev=>{
         if(ev.detail.index == 1) {
           return
@@ -27,7 +28,7 @@ new Runtime().module(define, name => {
           window.open("https://ampliasaude.github.io/trilhas5-2.html")
         }
       });
-      console.log(name);
+      return oldFunction(value,name);
     }
     return ret;
   }
