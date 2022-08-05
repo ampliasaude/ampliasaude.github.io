@@ -21,7 +21,7 @@ new Runtime().module(define, name => {
     ret.fulfilled = (value,name) => {
       value.addEventListener("aba",ev=>{
         if(ev.detail.index == 1) {
-          window.open("https://ampliasaude.github.io/trilhas5.html")
+          window.location.href="https://ampliasaude.github.io/trilhas5.html"
         } else if(ev.detail.index == 2) {
           return
           //window.open("https://ampliasaude.github.io/trilhas5-2.html")
