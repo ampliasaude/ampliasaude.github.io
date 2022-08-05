@@ -17,7 +17,7 @@ import define from "https://api.observablehq.com/d/7cdaac3198af0926.js?v=3";
 new Runtime().module(define, name => {
   if (name === "cabecalho") return new Inspector(document.querySelector("#observablehq-cabecalho-dbc7197a"));
   if (name === "mp") {
-    let ret = new Inspector(document.querySelector("#observablehq-mp-6818169e"));
+    let ret = new Inspector(document.querySelector("#observablehq-mp-dbc7197a"));
     ret.fulfilled = (value,name) => {
       value.addEventListener("aba",ev=>{
         if(ev.detail.index == 1) {
@@ -27,8 +27,8 @@ new Runtime().module(define, name => {
           //window.open("https://ampliasaude.github.io/trilhas5-2.html")
         }
       });
-      document.getElementById("observablehq-mp-6818169e").classList.remove("observablehq--running");
-      document.getElementById("observablehq-mp-6818169e").appendChild(value);
+      document.getElementById("observablehq-mp-dbc7197a").classList.remove("observablehq--running");
+      document.getElementById("observablehq-mp-dbc7197a").appendChild(value);
     }
     return ret;
   }
