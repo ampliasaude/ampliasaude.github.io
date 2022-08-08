@@ -16,7 +16,23 @@ import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/run
 import define from "https://api.observablehq.com/d/bb9997bf0952f01b.js?v=3";
 new Runtime().module(define, name => {
   if (name === "cabecalho") return new Inspector(document.querySelector("#observablehq-cabecalho-05cdce7e"));
-  if (name === "mp") return new Inspector(document.querySelector("#observablehq-mp-05cdce7e"));
+  if (name === "mp") {
+    let ret = new Inspector(document.querySelector("#observablehq-mp-05cdce7e"));
+    ret.fulfilled = (value,name) => {
+      value.addEventListener("aba",ev=>{
+        if(ev.detail.index == 1) {
+          window.location.href="https://ampliasaude.github.io/trilhas5.html"
+        } else if(ev.detail.index == 2) {
+          window.location.href="https://ampliasaude.github.io/trilhas5-2.html"
+        } else if(ev.detail.index == 3) {
+          return
+        }
+      });
+      document.getElementById("observablehq-mp-05cdce7e").classList.remove("observablehq--running");
+      document.getElementById("observablehq-mp-05cdce7e").appendChild(value);
+    }
+    return ret;
+  }
   if (name === "div_controles") return new Inspector(document.querySelector("#observablehq-div_controles-05cdce7e"));
   if (name === "vis") return new Inspector(document.querySelector("#observablehq-vis-05cdce7e"));
   if (name === "style") return new Inspector(document.querySelector("#observablehq-style-05cdce7e"));
