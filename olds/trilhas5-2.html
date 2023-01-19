@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Amplia Saúde: Trilhas Exploratórias</title>
+  </head>
+  <body>
+<div id="observablehq-cabecalho-dbc7197a"></div>
+<div id="observablehq-div_controles-dbc7197a"></div>
+<div id="observablehq-mp-dbc7197a"></div>
+<br>
+<div id="observablehq-vis-dbc7197a"></div>
+<div id="observablehq-style-dbc7197a"></div>
+<div id="observablehq-style_slider-dbc7197a"></div>
+<div id="observablehq-style_menu-dbc7197a"></div>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/7cdaac3198af0926.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "cabecalho") return new Inspector(document.querySelector("#observablehq-cabecalho-dbc7197a"));
+  if (name === "mp") {
+    let ret = new Inspector(document.querySelector("#observablehq-mp-dbc7197a"));
+    ret.fulfilled = (value,name) => {
+      value.addEventListener("aba",ev=>{
+        if(ev.detail.index == 1) {
+          window.location.href="https://ampliasaude.github.io/trilhas5.html"
+        } else if(ev.detail.index == 2) {
+          return
+          //window.open("https://ampliasaude.github.io/trilhas5-2.html")
+        } else if(ev.detail.index == 3) {
+          window.location.href="https://ampliasaude.github.io/trilhas5-3.html"
+        }
+      });
+      document.getElementById("observablehq-mp-dbc7197a").classList.remove("observablehq--running");
+      document.getElementById("observablehq-mp-dbc7197a").appendChild(value);
+    }
+    return ret;
+  }
+  if (name === "div_controles") return new Inspector(document.querySelector("#observablehq-div_controles-dbc7197a"));
+  if (name === "vis") return new Inspector(document.querySelector("#observablehq-vis-dbc7197a"));
+  if (name === "style") return new Inspector(document.querySelector("#observablehq-style-dbc7197a"));
+  if (name === "style_slider") return new Inspector(document.querySelector("#observablehq-style_slider-dbc7197a"));
+  if (name === "style_menu") return new Inspector(document.querySelector("#observablehq-style_menu-dbc7197a"));
+  return ["menu_municipios","barra_municipios","gPESO","funcoesGeradoras","gROBSON","gTOTAL","checkFiltros","conf_trilhas","listenerFiltroGlobal","onfirstload","gPM25","gListaValores","copyTrilha","copy_button","gAdicionaTrilha","gLoadingTrilha","removeTrilha","remove_trilha_button","addTrilha","inner_slider","checkPoluente","checkTempo","checkRobson","checkEscala","checkMediaMovel","filterDate","getCurrentConf","copyLinkButton"].includes(name);
+});
+</script>
+  </body>
+</html>
